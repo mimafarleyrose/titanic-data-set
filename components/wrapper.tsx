@@ -1,31 +1,31 @@
 import LightMode from "../styles/light_theme.svg";
 import DarkMode from "../styles/dark_theme.svg";
 import { useEffect, useState } from "react";
-import { getUsersThemePreference } from "../utils/getUsersThemePreference";
+import { useIsDarkMode } from "../utils/useIsDarkMode";
 
 export const Wrapper = ({ children }) => {
   const [darkTheme, setDarkTheme] = useState(false);
+  const { isDarkMode, toggleIsDarkMode } = useIsDarkMode();
 
-  useEffect(() => {
-    const prefersDark = getUsersThemePreference();
-    setDarkTheme(prefersDark);
-  }, []);
+  //   setDarkTheme(prefersDark);
 
   const changeTheme = () => {
-    localStorage.setItem("themePreference", !darkTheme ? "dark" : "light");
-    setDarkTheme(!darkTheme);
+    localStorage.setItem("themePreference", !isDarkMode ? "dark" : "light");
+    toggleIsDarkMode();
   };
 
   return (
     <div
       className={`${
-        darkTheme ? "bg-dark text-light" : "bg-light text-dark"
+        isDarkMode ? "bg-dark text-light" : "bg-light text-dark"
       } items-end flex flex-col p-4 w-screen h-screen justify-start`}
     >
       <button onClick={changeTheme}>
-        {darkTheme ? <LightMode /> : <DarkMode />}
+        {isDarkMode ? <LightMode dataQa="light-mode" /> : <DarkMode />}
       </button>
-      <main className="flex flex-row items-center w-full h-full justify-center">{children}</main>
+      <main className="flex flex-row items-center w-full h-full justify-center">
+        {children}
+      </main>
     </div>
   );
 };

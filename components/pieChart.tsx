@@ -1,4 +1,5 @@
 import ReactECharts from "echarts-for-react";
+import { getUsersThemePreference, useIsDarkMode } from "../utils/useIsDarkMode";
 
 const labelConfig = {
   normal: {
@@ -25,11 +26,26 @@ interface PieChartProps {
 }
 
 export const PieChart = ({ passengers }: PieChartProps) => {
+    const darkMode = useIsDarkMode();
+
   const getData = () => {
     return passengers?.map((passenger) => ({
       value: passenger.number,
       name: passenger.label,
-      label: labelConfig,
+      label: {
+        normal: {
+          show: true,
+          borderColor: "#333",
+          padding: 10,
+          color: darkMode ? "facde3" : "F49AC7",
+          fontSize: 14,
+          shadowBlur: 3,
+          shadowColor: "#888",
+          shadowOffsetX: 0,
+          shadowOffsetY: 3,
+          lineHeight: 30,
+        },
+      },
     }));
   };
 
