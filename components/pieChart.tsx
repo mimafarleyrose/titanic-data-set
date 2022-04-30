@@ -26,7 +26,7 @@ interface PieChartProps {
 }
 
 export const PieChart = ({ passengers }: PieChartProps) => {
-    const darkMode = useIsDarkMode();
+  const darkMode = useIsDarkMode();
 
   const getData = () => {
     return passengers?.map((passenger) => ({
@@ -37,7 +37,7 @@ export const PieChart = ({ passengers }: PieChartProps) => {
           show: true,
           borderColor: "#333",
           padding: 10,
-          color: darkMode ? "facde3" : "F49AC7",
+          color: darkMode ? "#F49AC7" : "#facde3",
           fontSize: 14,
           shadowBlur: 3,
           shadowColor: "#888",

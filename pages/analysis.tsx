@@ -2,7 +2,6 @@ import { Wrapper } from "../components/wrapper";
 import Octopus from "../styles/octopus.svg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ReactECharts from "echarts-for-react";
 import { PieChart } from "../components/pieChart";
 
 export default function Analysis() {

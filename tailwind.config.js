@@ -17,12 +17,12 @@ module.exports = {
         "7xl": "7rem",
       },
       backgroundColor: {
-        "dark": "#16243c",
-        "light": "#d4e8f7",
+        dark: "#d4e8f7",
+        light: "#16243c",
       },
       colors: {
-        "light": "#facde3",
-        "dark":"#F49AC7"
+        light: "#facde3",
+        dark: "#F49AC7",
       },
     },
   },
