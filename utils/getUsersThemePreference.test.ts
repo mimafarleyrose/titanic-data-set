@@ -22,14 +22,14 @@ describe("getUsersThemePreference", () => {
       expect(result).toBeFalsy();
     });
     it("user locally stored light theme preference", () => {
-      appPreference = null;
+      appPreference = "light";
 
       const result = getUsersThemePreference();
       expect(result).toBeFalsy();
     });
 
     it("user locally stored dark theme preference", () => {
-      appPreference = "enabled";
+      appPreference = "dark";
 
       const result = getUsersThemePreference();
       expect(result).toBeTruthy();
@@ -45,14 +45,14 @@ describe("getUsersThemePreference", () => {
       expect(result).toBeTruthy();
     });
     it("user locally stored light theme preference", () => {
-      appPreference = null;
+      appPreference = "light";
 
       const result = getUsersThemePreference();
       expect(result).toBeFalsy();
     });
 
     it("user locally stored dark theme preference", () => {
-      appPreference = "enabled";
+      appPreference = "dark";
 
       const result = getUsersThemePreference();
       expect(result).toBeTruthy();

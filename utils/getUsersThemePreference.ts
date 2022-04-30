@@ -1,12 +1,14 @@
 export const getUsersThemePreference = (): boolean => {
-  const locallyStoredPreference = localStorage.getItem("darkMode");
+  const locallyStoredPreference = localStorage.getItem("themePreference");
 
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+  console.log(prefersDark);
+  console.log(locallyStoredPreference)
 
-  return locallyStoredPreference !== undefined
-    ? locallyStoredPreference !== "enabled"
-      ? false
-      : true
+  return locallyStoredPreference
+    ? locallyStoredPreference === "dark"
+      ? true
+      : false
     : prefersDark;
 };

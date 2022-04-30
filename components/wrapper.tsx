@@ -12,7 +12,7 @@ export const Wrapper = ({ children }) => {
   }, []);
 
   const changeTheme = () => {
-    localStorage.setItem("darkMode", !darkTheme ? "enabled" : null);
+    localStorage.setItem("themePreference", !darkTheme ? "dark" : "light");
     setDarkTheme(!darkTheme);
   };
 
