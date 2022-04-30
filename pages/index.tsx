@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Wrapper>
       <Octopus />
-      <h1 className="font-Lodrina text-7xl text-light-pink">
+      <h1 className="font-Lodrina text-7xl">
         Understanding the Titanic
       </h1>
       <Link href="/analysis">
