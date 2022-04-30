@@ -1,13 +1,20 @@
+import Octopus from "../styles/octopus.svg";
+import Arrow from "../styles/arrow.svg";
+import { Wrapper } from "../components/wrapper";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <div className="container flex items-center p-4 mx-auto min-h-screen justify-center">
-      <main>
-        <h1 className="font-mono text-xl code">
-          Welcome to <span className="text-purple-700">Nextjs</span>,{" "}
-          <span className="text-indigo-700">TailwindCSS</span> and{" "}
-          <span className="text-gray-700">TypeScript</span>
-        </h1>
-      </main>
-    </div>
+    <Wrapper>
+      <Octopus />
+      <h1 className="font-Lodrina text-7xl text-light-pink">
+        Understanding the Titanic
+      </h1>
+      <Link href="/analysis">
+        <span className="transition ease-in-out delay-150 opacity-0 hover:opacity-100 cursor-pointer">
+          <Arrow className="w-20 h-20 pl-4 pt-3" />
+        </span>
+      </Link>
+    </Wrapper>
   );
 }
