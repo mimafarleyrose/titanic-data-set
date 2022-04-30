@@ -1,5 +1,5 @@
 import ReactECharts from "echarts-for-react";
-import { getUsersThemePreference, useIsDarkMode } from "../utils/useIsDarkMode";
+import { useIsDarkMode } from "../utils/useIsDarkMode";
 
 const labelConfig = {
   normal: {
