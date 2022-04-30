@@ -7,10 +7,8 @@ export default function Home() {
   return (
     <Wrapper>
       <Octopus />
-      <h1 className="font-Lodrina text-7xl">
-        Understanding the Titanic
-      </h1>
-      <Link href="/analysis">
+      <h1 className="font-Lodrina text-7xl">Understanding the Titanic</h1>
+      <Link href="/analysis" passHref>
         <span className="transition ease-in-out delay-150 opacity-0 hover:opacity-100 cursor-pointer">
           <Arrow className="w-20 h-20 pl-4 pt-3" />
         </span>

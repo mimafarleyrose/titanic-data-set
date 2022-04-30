@@ -33,7 +33,7 @@ export default function Analysis() {
 
   return (
     <Wrapper>
-      <Link href="/">
+      <Link href="/" passHref>
         <Octopus className="cursor-pointer" />
       </Link>
       <div>
