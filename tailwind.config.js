@@ -9,9 +9,15 @@ module.exports = {
       colors: {
         "accent-1": "#333",
       },
+      width: {
+        item: "40vw",
+      },
+      height: {
+        item: "40vh",
+      },
       fontFamily: {
         Lodrina: ["Londrina Outline", "cursive"],
-        LodrinaSolid: ['Londrina Solid', "cursive"],
+        LodrinaSolid: ["Londrina Solid", "cursive"],
         Lato: ["Lato", "sans-serif"],
       },
       fontSize: {

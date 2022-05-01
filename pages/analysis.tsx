@@ -2,6 +2,7 @@ import { Wrapper } from "../components/wrapper";
 import { useEffect, useState } from "react";
 import { PieChart } from "../components/pieChart";
 import { Carousel } from "../components/carousel";
+import { PassengerExperience } from "../components/passengerExperience";
 
 export default function Analysis() {
   const [data, setData] = useState<any>({});
@@ -32,6 +33,8 @@ export default function Analysis() {
     </div>
   );
 
+  const ItemThree = () => <PassengerExperience />;
+
   useEffect(() => {
     handleFetchPassengers();
     handleFetchSurvivingPassengers();
@@ -40,7 +43,7 @@ export default function Analysis() {
   return (
     <Wrapper>
       <div className="flex flex-row">
-        <Carousel items={[<ItemOne key={0} />, <ItemTwo key={1} />]} />
+        <Carousel items={[<ItemOne key={0} />, <ItemTwo key={1} />, <ItemThree key={2} />]} />
       </div>
     </Wrapper>
   );
