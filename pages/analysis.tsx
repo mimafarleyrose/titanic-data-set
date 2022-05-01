@@ -1,8 +1,7 @@
 import { Wrapper } from "../components/wrapper";
-import SandCastle from "../styles/sand_castle.svg";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PieChart } from "../components/pieChart";
+import { Carousel } from "../components/carousel";
 
 export default function Analysis() {
   const [data, setData] = useState<any>({});
@@ -20,6 +19,19 @@ export default function Analysis() {
     setSurvivedData(analysisData);
   };
 
+  const ItemOne = () => (
+    <div className="flex flex-col items-center">
+      Passengers Aboard The Titanic
+      <PieChart passengers={data.passengers} />
+    </div>
+  );
+  const ItemTwo = () => (
+    <div className="flex flex-col items-center">
+      Surving Passengers Aboard The Titanic
+      <PieChart passengers={survivedData.passengers} />
+    </div>
+  );
+
   useEffect(() => {
     handleFetchPassengers();
     handleFetchSurvivingPassengers();
@@ -28,14 +40,7 @@ export default function Analysis() {
   return (
     <Wrapper>
       <div className="flex flex-row">
-        <div className="flex flex-col items-center">
-          Passengers Aboard The Titanic
-          <PieChart passengers={data.passengers} />
-        </div>
-        <div className="flex flex-col items-center">
-          Surving Passengers Aboard The Titanic
-          <PieChart passengers={survivedData.passengers} />
-        </div>
+        <Carousel items={[<ItemOne key={0} />, <ItemTwo key={1} />]} />
       </div>
     </Wrapper>
   );
