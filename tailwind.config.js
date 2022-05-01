@@ -11,10 +11,13 @@ module.exports = {
       },
       fontFamily: {
         Lodrina: ["Londrina Outline", "cursive"],
+        LodrinaSolid: ['Londrina Solid', "cursive"],
         Lato: ["Lato", "sans-serif"],
       },
       fontSize: {
         "7xl": "7rem",
+        "5xl": "5rem",
+        "3xl": "2.5rem",
       },
       backgroundColor: {
         dark: "#d4e8f7",
