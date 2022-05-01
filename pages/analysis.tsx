@@ -1,5 +1,5 @@
 import { Wrapper } from "../components/wrapper";
-import Octopus from "../styles/octopus.svg";
+import SandCastle from "../styles/sand_castle.svg";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PieChart } from "../components/pieChart";
@@ -27,9 +27,6 @@ export default function Analysis() {
 
   return (
     <Wrapper>
-      <Link href="/" passHref>
-        <Octopus className="cursor-pointer" />
-      </Link>
       <div className="flex flex-row">
         <div className="flex flex-col items-center">
           Passengers Aboard The Titanic
