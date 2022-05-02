@@ -1,9 +1,9 @@
-import LightMode from "../styles/light_theme.svg";
-import DarkMode from "../styles/dark_theme.svg";
+import LightMode from "../styles/svgs/light_theme.svg";
+import DarkMode from "../styles/svgs/dark_theme.svg";
 import { useEffect, useState } from "react";
 import { useIsDarkMode } from "../utils/useIsDarkMode";
 import Link from "next/link";
-import SandCastle from "../styles/sand_castle.svg";
+import SandCastle from "../styles/svgs/sand_castle.svg";
 import { useRouter } from "next/router";
 
 export const Wrapper = ({ children }) => {

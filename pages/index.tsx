@@ -1,5 +1,5 @@
-import Octopus from "../styles/octopus.svg";
-import Arrow from "../styles/arrow.svg";
+import Octopus from "../styles/svgs/octopus.svg";
+import Arrow from "../styles/svgs/arrow.svg";
 import { Wrapper } from "../components/wrapper";
 import Link from "next/link";
 

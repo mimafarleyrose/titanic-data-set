@@ -1,6 +1,6 @@
 import { ReactElement, useState } from "react";
 import { Wrapper } from "./wrapper";
-import Arrow from "../styles/arrow.svg";
+import Arrow from "../styles/svgs/arrow.svg";
 
 interface CarouselProps {
   items: ReactElement[];

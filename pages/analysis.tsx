@@ -3,47 +3,44 @@ import { useEffect, useState } from "react";
 import { PieChart } from "../components/pieChart";
 import { Carousel } from "../components/carousel";
 import { PassengerExperience } from "../components/passengerExperience";
+import { Passenger } from "./api/passenger";
+import { handleFetchData } from "../utils/fetchData";
 
+interface PassengerData {
+  passengers?: Passenger[];
+}
 export default function Analysis() {
-  const [data, setData] = useState<any>({});
-  const [survivedData, setSurvivedData] = useState<any>({});
-
-  const handleFetchPassengers = async () => {
-    const response = await fetch("/api/passengers");
-    const analysisData = await response.json();
-    setData(analysisData);
-  };
-
-  const handleFetchSurvivingPassengers = async () => {
-    const response = await fetch("/api/survived");
-    const analysisData = await response.json();
-    setSurvivedData(analysisData);
-  };
-
-  const ItemOne = () => (
-    <div className="flex flex-col items-center">
-      Passengers Aboard The Titanic
-      <PieChart passengers={data.passengers} />
-    </div>
-  );
-  const ItemTwo = () => (
-    <div className="flex flex-col items-center">
-      Surving Passengers Aboard The Titanic
-      <PieChart passengers={survivedData.passengers} />
-    </div>
-  );
-
-  const ItemThree = () => <PassengerExperience />;
+  const [passengerData, setPassengerData] = useState<PassengerData>({});
+  const [survivingPassengersData, setSurvivingPassengersData] =
+    useState<PassengerData>({});
 
   useEffect(() => {
-    handleFetchPassengers();
-    handleFetchSurvivingPassengers();
+    handleFetchData("/api/passengers", setPassengerData);
+    handleFetchData("/api/survived", setSurvivingPassengersData);
   }, []);
 
   return (
     <Wrapper>
       <div className="flex flex-row">
-        <Carousel items={[<ItemOne key={0} />, <ItemTwo key={1} />, <ItemThree key={2} />]} />
+        <Carousel
+          items={[
+            <PieChart
+              key={0}
+              passengers={passengerData.passengers}
+              title={"Passengers Aboard The Titanic"}
+            />,
+            <PieChart
+              key={1}
+              passengers={survivingPassengersData.passengers}
+              title={"Passengers Who Survived The Titanic"}
+            />,
+            <PassengerExperience
+              key={2}
+              passengers={passengerData.passengers}
+              survivingPassengers={survivingPassengersData}
+            />,
+          ]}
+        />
       </div>
     </Wrapper>
   );
