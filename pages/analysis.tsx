@@ -37,7 +37,7 @@ export default function Analysis() {
             <PassengerExperience
               key={2}
               passengers={passengerData.passengers}
-              survivingPassengers={survivingPassengersData}
+              survivingPassengers={survivingPassengersData.passengers}
             />,
           ]}
         />
